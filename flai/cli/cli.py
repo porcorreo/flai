@@ -11,13 +11,11 @@ import traceback
 
 def print_help():
     console.clear()
-    
-    # Título principal
+
     console.print()
     console.rule("[bold cyan]🚀 Flai CLI[/bold cyan]", style="cyan")
     console.print()
     
-    # Panel de uso
     console.print(Panel.fit(
         "[bold green]flai <command> [options][/bold green]",
         title="[yellow]📌 Usage[/yellow]",
@@ -64,7 +62,34 @@ def print_help():
     console.print(table)
     console.print()
     
+def show_banner():
+    console.print(
+        Panel(
+            "🚀 [bold cyan]Flai - Framework local de IA[/bold cyan]\n\n"
+            "Este projeto é [bold green]opensource[/bold green].\n"
+            "Você está entre os primeiros usuários.\n"
+            "[bold red]Mais Versões serão liberadas[/bold red].\n"
+            "[bold yellow]somente após 1000 e 2000 inscritos.[/bold yellow].\n\n"
+            "👉 https://www.youtube.com/@LatinDev\n"
+            "curso fleting completo: https://youtu.be/sm3jWfd1ceU?si=8xCUIRfYGWkKym7X\n",
+            title="Flai",
+            border_style="cyan"
+        )
+    )
+
+def show_footer():
+    console.print(
+        Panel(
+            "💡 Curtiu o Flai?\n"
+            "Ajude a liberar novas features 🚀\n\n"
+            "[bold yellow]Meta: 2000 inscritos[/bold yellow]\n"
+            "👉 https://www.youtube.com/@LatinDev\n",
+            border_style="green"
+        )
+    )
+
 def main():
+    show_banner()
     if len(sys.argv) < 2:
         print_help()
         return
@@ -88,6 +113,8 @@ def main():
     except Exception as e:
          print("Error executing CLI command:", str(e))
          traceback.print_exc() 
+    finally:
+        show_footer()
 
 if __name__ == "__main__":
     main()
