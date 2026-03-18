@@ -1,6 +1,6 @@
 [project]
 name = "flai"
-version = "0.1.3"
+version = "0.1.5"
 description = "Flai - Framework local para ia"
 readme = "./README.md"
 license = { text = "MIT" }
